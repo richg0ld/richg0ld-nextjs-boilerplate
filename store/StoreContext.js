@@ -9,7 +9,7 @@ const StoreProvider = ({ children }) => {
     const dispatch = applyMiddleware(_dispatch);
 
     return (
-        <StoreContext.Provider value={[state, dispatch]}>
+        <StoreContext.Provider value={{state, dispatch}}>
             {children}
         </StoreContext.Provider>
     );

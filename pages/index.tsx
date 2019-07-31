@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Link from 'next/link';
+import {StoreContext} from "../store/StoreContext";
 
 function getPosts() {
     return [
@@ -9,7 +10,9 @@ function getPosts() {
     ];
 }
 
-const Index = () => {
+const Index = (props) => {
+    const {state, dispatch} = useContext(StoreContext);
+    console.log("???", props);
     return (
         <div>
             <h2>Index Page</h2>
@@ -49,6 +52,10 @@ const Index = () => {
           `}</style>
         </div>
     )
+};
+
+Index.getInitialProps = async ({ req }) => {
+    console.log("props",  Object.keys(req), req.client)
 };
 
 export default Index
