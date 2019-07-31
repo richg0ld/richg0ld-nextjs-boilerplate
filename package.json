@@ -1,0 +1,30 @@
+{
+  "name": "richg0ld-nextjs-boilerplate",
+  "version": "0.1.0",
+  "description": "Next.js boilerplate project",
+  "main": "server/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richg0ld/richg0ld-nextjs-boilerplate.git"
+  },
+  "author": "richg0ld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richg0ld/richg0ld-nextjs-boilerplate/issues"
+  },
+  "homepage": "https://github.com/richg0ld/richg0ld-nextjs-boilerplate#readme",
+  "dependencies": {
+    "next": "^9.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.23",
+    "typescript": "^3.5.3"
+  }
+}
