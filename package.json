@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/richg0ld/richg0ld-nextjs-boilerplate#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
