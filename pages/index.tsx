@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux'
+import {getSample} from "../modules/sample";
 
 function getPosts() {
     return [
@@ -9,8 +11,15 @@ function getPosts() {
     ];
 }
 
-const Index = (props) => {
-    console.log("???", props);
+const Index = () => {
+    const sample = useSelector(state => state.sample, []);
+    const dispatch = useDispatch();
+    console.log(sample, dispatch);
+
+    useEffect(() => {
+        dispatch(getSample())
+    }, []);
+
     return (
         <div>
             <h2>Index Page</h2>
@@ -23,6 +32,7 @@ const Index = (props) => {
                     </li>
                 ))}
             </ul>
+            <div>status code : {sample.status}</div>
             { /*language=SCSS*/ }
             <style jsx>{`
             h1,
