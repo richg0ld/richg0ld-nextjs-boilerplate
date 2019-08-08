@@ -1,6 +1,5 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Link from 'next/link';
-import {StoreContext} from "../store/StoreContext";
 
 function getPosts() {
     return [
@@ -11,7 +10,6 @@ function getPosts() {
 }
 
 const Index = (props) => {
-    const {state, dispatch} = useContext(StoreContext);
     console.log("???", props);
     return (
         <div>
