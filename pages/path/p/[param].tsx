@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 
 const Param = () => {
     const router = useRouter();
-    console.log(router);
     return (
         <div>
             <h2>Param Page</h2>
