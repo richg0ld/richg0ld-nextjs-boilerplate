@@ -20,8 +20,6 @@ class MyApp extends App {
     // @ts-ignore
     const { Component, pageProps, store } = this.props;
 
-    console.log(store);
-
     return (
       <Container>
         <Provider store={store}>

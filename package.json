@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/richg0ld/richg0ld-nextjs-boilerplate#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.136",
     "axios": "^0.19.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.0.0",
@@ -38,8 +39,14 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.0",
+    "@types/next-redux-saga": "^3.0.1",
+    "@types/next-redux-wrapper": "^2.0.2",
     "@types/node": "^12.6.8",
     "@types/react": "^16.8.23",
+    "@types/react-redux": "^7.1.1",
+    "@types/redux": "^3.6.0",
+    "@types/redux-actions": "^2.6.1",
+    "@types/redux-saga": "^0.10.5",
     "cross-env": "^5.2.0",
     "dotenv-webpack": "^1.7.0",
     "nodemon": "^1.19.1",
