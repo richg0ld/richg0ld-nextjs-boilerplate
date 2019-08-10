@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getSample, GET_SAMPLE } from "../modules/sample";
-import _ from "lodash";
 import { useTranslation } from "../i18n";
 
 function getPosts() {
@@ -17,6 +16,12 @@ const Index = () => {
   const { t } = useTranslation("sample");
   const sample = useSelector(state => state.sample, []);
   const loading = useSelector(state => state.loading, []);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSample());
+  }, []);
 
   return (
     <div>
@@ -72,12 +77,6 @@ const Index = () => {
       `}</style>
     </div>
   );
-};
-
-Index.getInitialProps = async ({ store }) => {
-  if (_.isEmpty(store.getState().sample.data)) {
-    await store.dispatch(getSample());
-  }
 };
 
 export default Index;

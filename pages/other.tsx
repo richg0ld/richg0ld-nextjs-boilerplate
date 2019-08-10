@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { getSample } from "../modules/sample";
+import _ from "lodash";
 
 const Other = () => {
   const sample = useSelector(state => state.sample, []);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getSample());
-  }, []);
 
   return (
     <div>
@@ -26,6 +22,12 @@ const Other = () => {
       `}</style>
     </div>
   );
+};
+
+Other.getInitialProps = async ({ store }) => {
+  if (_.isEmpty(store.getState().sample.data)) {
+    await store.dispatch(getSample());
+  }
 };
 
 export default Other;
