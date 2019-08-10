@@ -20,6 +20,9 @@ const Index = () => {
     <div>
       <h2>Index Page</h2>
       <div>.env : {process.env.API_URL}</div>
+      <div>
+        <img src="/static/images/gold-coin.jpg" alt="gold coin" />
+      </div>
       <ul>
         {getPosts().map(post => (
           <li key={post.id}>
