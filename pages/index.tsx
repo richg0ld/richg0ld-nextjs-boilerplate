@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, useStore } from "react-redux";
 import { getSample, GET_SAMPLE } from "../modules/sample";
+import _ from "lodash";
 
 function getPosts() {
   return [
@@ -14,13 +15,11 @@ function getPosts() {
 const Index = () => {
   const sample = useSelector(state => state.sample, []);
   const loading = useSelector(state => state.loading, []);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  console.log(loading[GET_SAMPLE]);
-
-  useEffect(() => {
-    dispatch(getSample());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getSample());
+  // }, []);
 
   return (
     <div>
@@ -74,8 +73,11 @@ const Index = () => {
   );
 };
 
-Index.getInitialProps = async ({ req }) => {
-  console.log();
+Index.getInitialProps = async ({ store }) => {
+  console.log("%%%", store.getState().sample.data);
+  if (_.isEmpty(store.getState().sample.data)) {
+    await store.dispatch(getSample());
+  }
 };
 
 export default Index;

@@ -1,7 +1,9 @@
 import React from "react";
 import App, { Container } from "next/app";
 import { Provider } from "react-redux";
-import store from "../store";
+import withRedux from "next-redux-wrapper";
+import withReduxSaga from "next-redux-saga";
+import createStore from "../store";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -15,7 +17,10 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    // @ts-ignore
+    const { Component, pageProps, store } = this.props;
+
+    console.log(store);
 
     return (
       <Container>
@@ -27,4 +32,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default withRedux(createStore)(withReduxSaga(MyApp));
