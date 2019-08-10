@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { getSample, GET_SAMPLE } from "../modules/sample";
 import _ from "lodash";
+import { withTranslation } from "react-i18next";
 
 function getPosts() {
   return [
@@ -12,7 +13,7 @@ function getPosts() {
   ];
 }
 
-const Index = () => {
+const Index = ({ t }) => {
   const sample = useSelector(state => state.sample, []);
   const loading = useSelector(state => state.loading, []);
 
@@ -20,6 +21,7 @@ const Index = () => {
     <div>
       <h2>Index Page</h2>
       <div>.env : {process.env.API_URL}</div>
+      <div>with translation : {t("sample.hello_world")}</div>
       <div>
         <img src="/static/images/gold-coin.jpg" alt="gold coin" />
       </div>
@@ -77,4 +79,4 @@ Index.getInitialProps = async ({ store }) => {
   }
 };
 
-export default Index;
+export default withTranslation("sample")(Index);
