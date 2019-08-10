@@ -14,7 +14,15 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    return { pageProps };
+    /**
+     * @ISSUE: namespacesRequired 를 작업 편의를 위해 여기서 한번에 보내주지만 대규모가 될경우 각 페이지에서 불러줘야 성능에 좋다.
+     */
+    return {
+      pageProps: {
+        ...pageProps,
+        namespacesRequired: ["sample", "common", "meta"]
+      }
+    };
   }
 
   render() {

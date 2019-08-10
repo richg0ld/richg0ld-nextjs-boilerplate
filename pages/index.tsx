@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { getSample, GET_SAMPLE } from "../modules/sample";
 import _ from "lodash";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "../i18n";
 
 function getPosts() {
   return [
@@ -13,7 +13,8 @@ function getPosts() {
   ];
 }
 
-const Index = ({ t }) => {
+const Index = () => {
+  const { t } = useTranslation("sample");
   const sample = useSelector(state => state.sample, []);
   const loading = useSelector(state => state.loading, []);
 
@@ -79,4 +80,4 @@ Index.getInitialProps = async ({ store }) => {
   }
 };
 
-export default withTranslation("sample")(Index);
+export default Index;

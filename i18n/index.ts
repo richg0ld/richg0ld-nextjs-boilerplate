@@ -7,6 +7,6 @@ const nextI18next = new NextI18Next({
   // localeSubpaths
 });
 
-export const { appWithTranslation, withTranslation } = nextI18next;
+export const { appWithTranslation, useTranslation } = nextI18next;
 
 export default nextI18next;
