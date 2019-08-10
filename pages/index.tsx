@@ -22,6 +22,7 @@ const Index = () => {
   return (
     <div>
       <h2>Index Page</h2>
+      <div>.env : {process.env.API_URL}</div>
       <ul>
         {getPosts().map(post => (
           <li key={post.id}>
@@ -61,6 +62,8 @@ const Index = () => {
   );
 };
 
-Index.getInitialProps = async ({ req }) => {};
+Index.getInitialProps = async ({ req }) => {
+  console.log();
+};
 
 export default Index;
