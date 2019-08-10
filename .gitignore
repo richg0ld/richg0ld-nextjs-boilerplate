@@ -18,6 +18,7 @@ node_modules/
 # next.js build output
 .next
 out/
+dist
 
 # vscode
 .vscode

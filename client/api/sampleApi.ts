@@ -1,8 +1,8 @@
-import service from "./service";
+import request from "./request";
 
 export default () => {
-    return service({
-        method: 'get',
-        uri: 'sample/api',
-    })
+  return request({
+    method: "get",
+    uri: "sample/api"
+  });
 };

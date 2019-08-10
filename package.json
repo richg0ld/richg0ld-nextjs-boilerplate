@@ -5,7 +5,9 @@
   "main": "server/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next"
+    "dev": "next",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "start": "cross-env NODE_ENV=production node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,10 @@
   "homepage": "https://github.com/richg0ld/richg0ld-nextjs-boilerplate#readme",
   "dependencies": {
     "axios": "^0.19.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -30,8 +36,12 @@
   "devDependencies": {
     "@types/node": "^12.6.8",
     "@types/react": "^16.8.23",
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
+    "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   }
 }
