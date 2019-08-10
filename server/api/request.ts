@@ -15,7 +15,8 @@ export default (
   };
 
   axios({
-    url: `${process.env.API_URL}${encodeURI(uri)}`,
+    baseURL: process.env.API_URL,
+    url: encodeURI(uri),
     method: method,
     params: params,
     data: data,

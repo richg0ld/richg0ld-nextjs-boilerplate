@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
-import { getSample } from "../modules/sample";
+import { getSample, GET_SAMPLE } from "../modules/sample";
 
 function getPosts() {
   return [
@@ -13,7 +13,10 @@ function getPosts() {
 
 const Index = () => {
   const sample = useSelector(state => state.sample, []);
+  const loading = useSelector(state => state.loading, []);
   const dispatch = useDispatch();
+
+  console.log(loading[GET_SAMPLE]);
 
   useEffect(() => {
     dispatch(getSample());
@@ -32,7 +35,16 @@ const Index = () => {
           </li>
         ))}
       </ul>
-      <div>status code : {sample.status}</div>
+      <h2>Sample Api</h2>
+      <div>
+        <strong>Status code</strong> : {sample.status}
+      </div>
+      <div>
+        <strong>Loading</strong> : {JSON.stringify(loading[GET_SAMPLE])}
+      </div>
+      <div>
+        <strong>Data</strong> : {JSON.stringify(sample.data)}
+      </div>
       {/*language=SCSS*/}
       <style jsx>{`
         h1,

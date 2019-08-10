@@ -9,7 +9,7 @@ export default ({
 }) => {
   return axios({
     baseURL: process.env.SERVICE_URL,
-    url: `api/${uri}`,
+    url: `/api${uri}`,
     method: method,
     params: params,
     data: data,

@@ -1,6 +1,7 @@
-import dotenv from "dotenv";
 import next from "next";
 import express from "express";
+import dotenv from "dotenv";
+import api from "./api";
 
 dotenv.config();
 
@@ -11,6 +12,8 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const server = express();
+
+  server.use("/api", api);
 
   server.get("*", (req, res) => {
     return handle(req, res);
