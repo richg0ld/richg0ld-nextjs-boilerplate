@@ -10,12 +10,27 @@ module.exports = {
     config.plugins = [
       ...config.plugins,
 
-      // Read the .env file
       new Dotenv({
         path: path.join(__dirname, ".env"),
         systemvars: true
       })
     ];
+
+    if (process.env.NODE_ENV === "production") {
+      const originalEntry = config.entry;
+      config.entry = async () => {
+        const entries = await originalEntry();
+
+        if (
+          entries["main.js"] &&
+          !entries["main.js"].includes("./client/polyfills.js")
+        ) {
+          entries["main.js"].unshift("./client/polyfills.js");
+        }
+
+        return entries;
+      };
+    }
 
     return config;
   }

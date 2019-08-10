@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/richg0ld/richg0ld-nextjs-boilerplate#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "@types/lodash": "^4.14.136",
     "axios": "^0.19.0",
     "cookie-parser": "^1.4.4",
