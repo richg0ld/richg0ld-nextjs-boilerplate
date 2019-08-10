@@ -13,26 +13,26 @@
 
 #Spec
 
-- [o] next.js 세팅 (typescript)
-- [o] 다국어 처리 (https://github.com/zeit/next.js/tree/canary/examples/with-react-intl)
-- [o] 다국시간 처리
-- [o] 폴리필 (polyfill) 처리 (https://github.com/zeit/next.js/tree/canary/examples/with-polyfills)
-- [x] 템플릿 캐싱 (https://github.com/zeit/next.js/tree/canary/examples/ssr-caching)
+- [x] next.js 세팅 (typescript)
+- [x] 다국어 처리 (https://github.com/zeit/next.js/tree/canary/examples/with-react-intl)
+- [x] 다국시간 처리
+- [x] 폴리필 (polyfill) 처리 (https://github.com/zeit/next.js/tree/canary/examples/with-polyfills)
+- [] 템플릿 캐싱 (https://github.com/zeit/next.js/tree/canary/examples/ssr-caching)
 - [x] static 파일 설정 (도메인 변경) (https://github.com/zeit/next.js/tree/canary/examples/root-static-files)
-- [o] 환경변수 설정 (https://github.com/zeit/next.js/tree/canary/examples/with-dotenv)
-- [x] 쿠키 관리 
-- [o] 상태관리 (redux, redux-saga)
-- [x] cdn 대비 처리
-- [x] 스타일링 sass 
-- [x] 테마 작업 환경
-- [x] 페이지 이동시 로딩바(프로그레스바) (https://github.com/zeit/next.js/tree/canary/examples/with-loading)
-- [x] 로거환경
-- [x] 커스텀 페이지(이벤트 페이지)
-- [x] tooltip
-- [x] test 환경
-- [x] 프로세스 메니저 세팅
-- [x] svg 이미지 적용(색상 바꿀 수 있도록)
-- [x] 도커 세팅
+- [x] 환경변수 설정 (https://github.com/zeit/next.js/tree/canary/examples/with-dotenv)
+- [] 쿠키 관리 
+- [x] 상태관리 (redux, redux-saga)
+- [] cdn 대비 처리
+- [] 스타일링 sass 
+- [] 테마 작업 환경
+- [] 페이지 이동시 로딩바(프로그레스바) (https://github.com/zeit/next.js/tree/canary/examples/with-loading)
+- [] 로거환경
+- [] 커스텀 페이지(이벤트 페이지)
+- [] tooltip
+- [] test 환경
+- [] 프로세스 메니저 세팅
+- [] svg 이미지 적용(색상 바꿀 수 있도록)
+- [] 도커 세팅
 
 
 #Prerequisites
