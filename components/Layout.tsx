@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Router from "next/router";
 import { useTranslation } from "react-i18next";
+import { Button } from "react-bootstrap";
 import "./Layout.style.scss";
 
 const Layout = props => {
@@ -58,6 +59,7 @@ const Layout = props => {
           <a href="/etc/hello.html">hello</a>
         </li>
       </nav>
+      <Button>Bootstrap</Button>
       <form onSubmit={onSubmit}>
         <input
           className={"text"}
