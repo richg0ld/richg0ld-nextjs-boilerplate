@@ -24,6 +24,7 @@
 - [x] 상태관리 (redux, redux-saga)
 - [] cdn 대비 처리
 - [x] 스타일링 sass
+- [x] 부트스트랩
 - [] 테마 작업 환경
 - [] 페이지 이동시 로딩바(프로그레스바) (https://github.com/zeit/next.js/tree/canary/examples/with-loading)
 - [] 로거환경
