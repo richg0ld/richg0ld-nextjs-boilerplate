@@ -1,0 +1,27 @@
+$themeColor: #ffffff;
+$themeColor2: #000000;
+
+.layout {
+  nav {
+    background-color: $themeColor;
+    color: $themeColor2;
+  }
+  h1 {
+    font-size: 50px;
+    background-color: $themeColor;
+    color: $themeColor2;
+  }
+  form {
+    width: 200px;
+    border: 1px solid #000000;
+  }
+  span {
+    color: black;
+    background-color: yellowgreen;
+  }
+  input {
+    .text {
+      font-size: 16px;
+    }
+  }
+}

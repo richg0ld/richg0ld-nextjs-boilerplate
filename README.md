@@ -23,7 +23,7 @@
 - [] 쿠키 관리 
 - [x] 상태관리 (redux, redux-saga)
 - [] cdn 대비 처리
-- [] 스타일링 sass 
+- [x] 스타일링 sass
 - [] 테마 작업 환경
 - [] 페이지 이동시 로딩바(프로그레스바) (https://github.com/zeit/next.js/tree/canary/examples/with-loading)
 - [] 로거환경
@@ -108,3 +108,4 @@ open http://localhost:3000
 ├── components/               - 컴포넌트 영역
 ├── client/                   - client 영역
 │   └── api/                  - client 용 api
+└── IDE/                      - 개발용 설정 파일
