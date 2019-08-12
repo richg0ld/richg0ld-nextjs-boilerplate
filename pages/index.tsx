@@ -27,6 +27,9 @@ const Index = () => {
   return (
     <Layout>
       <div>
+        <div className="test">
+          Postcss autoprefixer, postcss-css-variables test
+        </div>
         <h2>Index Page</h2>
         <div>.env : {process.env.API_URL}</div>
         <div>with translation : {t("sample.hello_world")}</div>
