@@ -1,7 +1,12 @@
 {
-  "meta" : {
+  "common" : {
     "title": "This is Next.js 9 boilerplate",
     "description": "This is Next.js 9 to easy development",
     "keywords": "next.js, typescript, react"
+  },
+  "index" : {
+    "title": "Index page",
+    "description": "This is Index page",
+    "keywords": "index"
   }
 }
