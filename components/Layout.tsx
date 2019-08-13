@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 import Router from "next/router";
 import { useTranslation } from "react-i18next";
@@ -7,9 +6,10 @@ import { Button } from "react-bootstrap";
 import "./Layout.style.scss";
 
 const Layout = props => {
-  const { title, description, keywords, children } = props;
-  const { t } = useTranslation(["meta", "sample"]);
+  const { theme: _theme, children } = props;
+  const { t } = useTranslation(["sample"]);
   const [something, setSomething] = useState("");
+  const [theme, setTheme] = useState(_theme);
   const onSubmit = e => {
     e.preventDefault();
     if (!something) return;
@@ -26,19 +26,19 @@ const Layout = props => {
     setSomething(e.target.value);
   };
 
-  const _title = title || t("meta.title");
-  const _description = description || t("meta.description");
-  const _keywords = keywords || t("meta.keywords");
+  const changeTheme = () => {};
 
   return (
     <div className={"layout"}>
-      <Head>
-        <title>{_title}</title>
-        <meta name="description" content={_description} />
-        <meta name="keywords" content={_keywords} />
-        <meta property="og:title" content={_title} />
-        <meta property="og:description" content={_description} />
-      </Head>
+      <label id="chkBox">
+        <input
+          type="checkbox"
+          name="theme"
+          checked={theme === "dark"}
+          onChange={changeTheme}
+        />{" "}
+        Dark
+      </label>
       <nav>
         <li>
           <Link href="/">
@@ -65,10 +65,10 @@ const Layout = props => {
           className={"text"}
           value={something}
           onChange={onChange}
-          placeholder={t("sample:sample.enter_text")}
+          placeholder={t("sample.enter_text")}
         />
       </form>
-      <h1>{t("sample:sample.hello_world")}</h1>
+      <h1>{t("sample.hello_world")}</h1>
       {children}
     </div>
   );
