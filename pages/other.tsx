@@ -1,26 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
 import { getSample } from "../modules/sample";
 import _ from "lodash";
+import ContainerSample from "../containers/ContainerSample";
+import Base from "../components/Base";
 
-const Other = () => {
-  const sample = useSelector(state => state.sample, []);
-
+const Other = props => {
   return (
-    <div>
+    <Base {...props}>
       <h2>Other Page</h2>
-      <div className="trans-content">{"sample.boilerplate"}</div>
+      <div className="other">{"sample.boilerplate"}</div>
       <div className="theme-color-comp">1234567890</div>
-      <div>
-        <strong>Data</strong> : {JSON.stringify(sample.data)}
-      </div>
-      {/*language=SCSS*/}
-      <style jsx>{`
-        .trans-content {
-          color: yellow;
-        }
-      `}</style>
-    </div>
+      <ContainerSample />
+    </Base>
   );
 };
 

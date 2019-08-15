@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getSample } from "../../modules/sample";
+import Base from "../../components/Base";
+import ContainerSample from "../../containers/ContainerSample";
 
 const Depth = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSample());
+  }, []);
   return (
-    <div>
-      <h2>Other Page</h2>
-      <div className="trans-content">{"sample.boilerplate"}</div>
-      <div className="theme-color-comp">1234567890</div>
-      {/*language=SCSS*/}
-      <style jsx>{`
-        .trans-content {
-          color: yellow;
-        }
-      `}</style>
-    </div>
+    <Base>
+      <h2>Depth Page</h2>
+      <ContainerSample />
+    </Base>
   );
 };
 

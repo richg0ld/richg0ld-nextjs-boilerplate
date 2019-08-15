@@ -1,0 +1,19 @@
+:root {
+  --some-color: red;
+}
+
+.container-sample {
+  &__button {
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #7f7f7f;
+    color: #ffffff;
+  }
+  &__postcss {
+    /* red */
+    display: flex;
+    color: var(--some-color);
+    flex: 1 1 auto;
+  }
+}
