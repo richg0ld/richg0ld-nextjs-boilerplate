@@ -1,3 +1,5 @@
 {
+  "q_pizza" : "What kind of pizza do you like?",
+  "a_pizza" : "I also like :pizza",
   "test" : "test"
 }

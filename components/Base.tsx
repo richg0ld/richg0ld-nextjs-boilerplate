@@ -1,33 +1,53 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Router from "next/router";
 import { useTranslation } from "react-i18next";
-import { Button } from "react-bootstrap";
+import { FormCheck, FormControl, InputGroup, Nav } from "react-bootstrap";
 import "./Base.style.scss";
 
 const Base = props => {
   const { theme: _theme, children } = props;
+  const router = useRouter();
   const { t } = useTranslation(["sample", "meta"]);
-  const [something, setSomething] = useState("");
+  const [param, setParam] = useState("");
+  const [pizza, setPizza] = useState("");
   const [theme, setTheme] = useState(_theme);
-  const onSubmit = e => {
+  const onSubmitParam = e => {
     e.preventDefault();
-    if (!something) return;
+    if (!param) return;
 
     return Router.push(
       {
-        pathname: "/param",
-        query: { something }
+        pathname: "/path/p/[param]",
+        query: { param }
       },
-      `/param/${something}`
+      `/path/p/${param}`
     );
   };
-  const onChange = e => {
-    setSomething(e.target.value);
+  const onSubmitPizza = e => {
+    e.preventDefault();
+    if (!pizza) return;
+
+    return Router.push(
+      {
+        pathname: "/path/[dynamic]/pizza",
+        query: { dynamic: pizza }
+      },
+      `/path/${pizza}/pizza`
+    );
+  };
+  const onChangeParam = e => {
+    setParam(e.target.value);
+  };
+  const onChangePizza = e => {
+    setPizza(e.target.value);
   };
 
-  const changeTheme = () => {};
+  const changeTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const title = props.title || t("meta:common.title");
   const description = props.description || t("meta:common.description");
@@ -42,43 +62,54 @@ const Base = props => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
       </Head>
-      <label id="chkBox">
-        <input
-          type="checkbox"
-          name="theme"
-          checked={theme === "dark"}
-          onChange={changeTheme}
-        />{" "}
-        Dark
-      </label>
-      <nav>
-        <li>
-          <Link href="/">
-            <a>home</a>
+      <InputGroup>
+        <label htmlFor="dark">
+          <InputGroup.Checkbox
+            name="theme"
+            id="dark"
+            checked={theme === "dark"}
+            onChange={changeTheme}
+          />
+          Dark
+        </label>
+      </InputGroup>
+      <Nav variant={"tabs"} defaultActiveKey={router.pathname}>
+        <Nav.Item>
+          <Link href="/" passHref>
+            <Nav.Link>home</Nav.Link>
           </Link>
-        </li>
-        <li>
-          <Link href="/other">
-            <a>other</a>
+        </Nav.Item>
+        <Nav.Item>
+          <Link href="/other" passHref>
+            <Nav.Link>other</Nav.Link>
           </Link>
-        </li>
-        <li>
-          <Link href="/path/depth">
-            <a>depth</a>
+        </Nav.Item>
+        <Nav.Item>
+          <Link href="/path/depth" passHref>
+            <Nav.Link>depth</Nav.Link>
           </Link>
-        </li>
-        <li>
-          <a href="/etc/hello.html">hello</a>
-        </li>
-      </nav>
-      <Button>Bootstrap</Button>
-      <form onSubmit={onSubmit}>
-        <input
-          className={"text"}
-          value={something}
-          onChange={onChange}
-          placeholder={t("sample.enter_text")}
-        />
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/etc/hello.html">hello</Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <form onSubmit={onSubmitParam}>
+        <InputGroup>
+          <FormControl
+            value={param}
+            onChange={onChangeParam}
+            placeholder={t("sample.enter_text")}
+          />
+        </InputGroup>
+      </form>
+      <form onSubmit={onSubmitPizza}>
+        <InputGroup>
+          <FormControl
+            value={pizza}
+            onChange={onChangePizza}
+            placeholder={t("common:q_pizza")}
+          />
+        </InputGroup>
       </form>
       <h1>{t("sample.hello_world")}</h1>
       {children}
