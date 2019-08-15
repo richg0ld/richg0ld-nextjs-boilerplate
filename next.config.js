@@ -23,9 +23,9 @@ module.exports = withSass({
 
         if (
           entries["main.js"] &&
-          !entries["main.js"].includes("./client/polyfills.js")
+          !entries["main.js"].includes("./client/polyfill.js")
         ) {
-          entries["main.js"].unshift("./client/polyfills.js");
+          entries["main.js"].unshift("./client/polyfill.js");
         }
 
         return entries;
