@@ -15,7 +15,7 @@
 
 - [x] next.js 세팅 (typescript)
 - [x] 다국어 처리 (https://github.com/zeit/next.js/tree/canary/examples/with-react-intl)
-- [x] 다국시간 처리
+- [] 다국시간 처리
 - [x] 폴리필 (polyfill) 처리 (https://github.com/zeit/next.js/tree/canary/examples/with-polyfills)
 - [] 템플릿 캐싱 (https://github.com/zeit/next.js/tree/canary/examples/ssr-caching)
 - [x] static 파일 설정 (도메인 변경) (https://github.com/zeit/next.js/tree/canary/examples/root-static-files)
