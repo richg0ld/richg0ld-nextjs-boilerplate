@@ -17,7 +17,7 @@ const Other = props => {
 
 Other.getInitialProps = async ({ store }) => {
   if (_.isEmpty(store.getState().sample.data)) {
-    await store.dispatch(getSample());
+    store.dispatch(getSample());
   }
 };
 
