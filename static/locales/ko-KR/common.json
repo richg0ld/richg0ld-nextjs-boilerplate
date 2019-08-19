@@ -1,5 +1,6 @@
 {
   "q_pizza" : "어떤 피자를 좋아하세요?",
   "a_pizza" : "저도 :pizza 좋아합니다.",
-  "test" : "테스트"
+  "test" : "테스트",
+  "select_language": "언어 선택"
 }

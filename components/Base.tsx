@@ -6,6 +6,7 @@ import Router from "next/router";
 import { useTranslation } from "react-i18next";
 import { FormCheck, FormControl, InputGroup, Nav } from "react-bootstrap";
 import "./Base.style.scss";
+import SelectLanguage from "./SelectLanguage";
 
 const Base = props => {
   const { theme: _theme, children } = props;
@@ -62,6 +63,7 @@ const Base = props => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
       </Head>
+      <SelectLanguage />
       <InputGroup>
         <label htmlFor="dark">
           <InputGroup.Checkbox
