@@ -1,5 +1,6 @@
 import next from "next";
 import express from "express";
+import morgan from "morgan";
 import dotenv from "dotenv";
 import api from "./api";
 import nextI18NextMiddleware from "next-i18next/middleware";
@@ -16,6 +17,7 @@ app.prepare().then(() => {
   const server = express();
 
   server.use(nextI18NextMiddleware(nextI18next));
+  server.use(morgan("dev"));
   server.use("/api", api);
 
   server.get("*", (req, res) => {

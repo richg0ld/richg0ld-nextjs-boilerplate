@@ -27,8 +27,8 @@
 - [x] 부트스트랩
 - [] 테마 작업 환경
 - [] 페이지 이동시 로딩바(프로그레스바) (https://github.com/zeit/next.js/tree/canary/examples/with-loading)
-- [] 로거환경
-- [] 커스텀 페이지(이벤트 페이지)
+- [x] 로거환경
+- [x] 커스텀 페이지(이벤트 페이지)
 - [] tooltip
 - [] test 환경
 - [] 프로세스 메니저 세팅
