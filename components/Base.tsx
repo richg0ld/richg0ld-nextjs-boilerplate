@@ -90,7 +90,7 @@ const Base = props => {
           </Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/event/hello.html">hello</Nav.Link>
+          <Nav.Link href="/static/event/hello.html">hello</Nav.Link>
         </Nav.Item>
       </Nav>
       <form onSubmit={onSubmitParam}>
