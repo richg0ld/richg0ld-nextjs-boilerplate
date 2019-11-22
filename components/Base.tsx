@@ -10,6 +10,7 @@ import SelectLanguage from "./SelectLanguage";
 
 const Base = props => {
   const { theme: _theme, children } = props;
+  console.log("_theme", _theme);
   const router = useRouter();
   const { t } = useTranslation(["sample", "meta"]);
   const [param, setParam] = useState("");
@@ -72,7 +73,7 @@ const Base = props => {
             checked={theme === "dark"}
             onChange={changeTheme}
           />
-          Dark
+          {theme}
         </label>
       </InputGroup>
       <Nav variant={"tabs"} defaultActiveKey={router.pathname}>
