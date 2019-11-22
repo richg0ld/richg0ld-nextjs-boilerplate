@@ -4,14 +4,14 @@ import { getSample } from "../../modules/sample";
 import Base from "../../components/Base";
 import ContainerSample from "../../containers/ContainerSample";
 
-const Depth = () => {
+const Depth = props => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getSample());
   }, []);
   return (
-    <Base>
+    <Base {...props}>
       <h2>Depth Page</h2>
       <ContainerSample />
     </Base>

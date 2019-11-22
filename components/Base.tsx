@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Router from "next/router";
 import { useTranslation } from "react-i18next";
 import { FormCheck, FormControl, InputGroup, Nav } from "react-bootstrap";
+import Cookies from "js-cookie";
 import "./Base.style.scss";
 import SelectLanguage from "./SelectLanguage";
 
@@ -47,8 +48,10 @@ const Base = props => {
     setPizza(e.target.value);
   };
 
-  const changeTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+  const changeTheme = theme => () => {
+    const _theme = theme === "dark" ? "light" : "dark";
+    setTheme(_theme);
+    Cookies.set("theme", _theme);
   };
 
   const title = props.title || t("meta:common.title");
@@ -71,7 +74,7 @@ const Base = props => {
             name="theme"
             id="dark"
             checked={theme === "dark"}
-            onChange={changeTheme}
+            onChange={changeTheme(theme)}
           />
           {theme}
         </label>
